@@ -2,11 +2,12 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
+    render json: @activities
 
-    respond_to do |format|
-      format.html { render :index}
-      format.json { render json: @activities }
-    end
+    # respond_to do |format|
+    #   format.html { render :index}
+    #   format.json { render json: @activities }
+    # end
   end
 
   def show
