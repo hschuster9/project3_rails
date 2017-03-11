@@ -12,11 +12,11 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
-
-    respond_to do |format|
-      format.html { render :show}
-      format.json { render json: @activity }
-    end
+    render json: @activity
+    # respond_to do |format|
+    #   format.html { render :show}
+    #   format.json { render json: @activity }
+    # end
   end
 
   def new
@@ -26,15 +26,20 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
 
-    respond_to do |format|
-      if @activity.save!
-        format.html { redirect_to @activity, notice: "Activity was created"}
-        format.json { render json: @activity, status: :created, location: @activity }
-      else
-        format.html { render :new }
-        format.json { render json: @activity.errors, status: :unprocessable_entity }
-      end
+    if @activity.save!
+      render json: @activity, status: :created, location: @activity
+    else
+      render json: @activity.errors, status: :unprocessable_entity
     end
+    # respond_to do |format|
+    #   if @activity.save!
+    #     format.html { redirect_to @activity, notice: "Activity was created"}
+    #     format.json { render json: @activity, status: :created, location: @activity }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @activity.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def edit
@@ -44,15 +49,21 @@ class ActivitiesController < ApplicationController
   def update
     @activity = Activity.find(params[:id])
 
-    respond_to do |format|
-      if @activity.update!(activity_params)
-        format.html { redirect_to @activity, notice: "Activity was updated"}
-        format.json { render json: @activity, location: @activity }
-      else
-        format.html { render :new }
-        format.json { render json: @activity.errors, status: :unprocessable_entity }
-      end
+    if @activity.update!(activity_params)
+      render json: @activity, location: @activity
+    else
+      render json: @activity.errors, status: :unprocessable_entity
     end
+
+    # respond_to do |format|
+    #   if @activity.update!(activity_params)
+    #     format.html { redirect_to @activity, notice: "Activity was updated"}
+    #     format.json { render json: @activity, location: @activity }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @activity.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def destroy
