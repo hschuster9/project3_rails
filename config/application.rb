@@ -13,7 +13,7 @@ module Project3Rails
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    config.api_only = true
+    # config.api_only = true
     config.middleware.insert_before 0, Rack::Cors do
      allow do
        origins '*' #this allows any origin. for testing purposes this is fine, but for deployment, you'll want to permit your `gh-pages`-deployed front end to interact with your API
