@@ -4,9 +4,5 @@ Rails.application.routes.draw do
   resources :activities do
     resources :people
     resources :messages
-<<<<<<< HEAD
   end
-=======
-end
->>>>>>> master
 end
