@@ -17,7 +17,7 @@ class PeopleController < ApplicationController
     @person = @activity.people.build(person_params)
 
     if @person.save!
-      render json: @person, status: :created, location: @person
+      render json: @person, status: :created
     else
       render json: @person.errors, status: :unprocessable_entity
     end
