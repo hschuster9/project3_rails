@@ -1,15 +1,20 @@
 class PeopleController < ApplicationController
 
   def index
-    activities = Activity.find(params[:activity_id])
-    @people = @person.activity
+    @activity = Activity.find(params[:activity_id])
+    @people = @activity.people
     render json: @people
+  end
 
+  def show
+    @person = Person.find(params[:id])
+    render json: @person
   end
 
 
   def create
-    @person = Person.new(person_params)
+    @activity = Activity.find(params[:activity_id])
+    @person = @activity.people.build(person_params)
 
     if @person.save!
       render json: @person, status: :created, location: @person
@@ -25,13 +30,11 @@ class PeopleController < ApplicationController
 
   def update
     @person = Person.find(params[:id])
-
     if @person.update!(person_params)
-      render json: @person, location: @person
+      render json: @person
     else
       render json: @person.errors, status: :unprocessable_entity
     end
-
   end
 
   def destroy
@@ -39,6 +42,7 @@ class PeopleController < ApplicationController
     @person.destroy
 
     # redirect_to people_path
+    render json: {message: "success"}, status: :ok
   end
 
 private
