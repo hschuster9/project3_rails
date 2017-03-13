@@ -1,4 +1,4 @@
-require_relative 'boot'
+require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
@@ -14,10 +14,17 @@ module Project3Rails
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.api_only = true
+
+    config.active_record.raise_in_transactional_callbacks = true
+
     config.middleware.insert_before 0, Rack::Cors do
      allow do
        origins '*' #this allows any origin. for testing purposes this is fine, but for deployment, you'll want to permit your `gh-pages`-deployed front end to interact with your API
+<<<<<<< HEAD
        resource '*', :headers => :any, :methods => [:get, :post, :options, :delete, :put]
+=======
+       resource '*', :headers => :any, :methods => [:get, :post, :options, :put, :delete]
+>>>>>>> master
      end
    end
 

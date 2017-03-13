@@ -68,8 +68,11 @@ class MessagesController < ApplicationController
   def destroy
     @message = Message.find(params[:id])
     @message.destroy
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> master
   end
 
 private

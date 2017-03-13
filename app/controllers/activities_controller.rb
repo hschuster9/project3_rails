@@ -69,7 +69,10 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
   end
 
 private

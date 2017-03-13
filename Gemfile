@@ -10,7 +10,7 @@ end
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Allow CORS requests
-gem 'rack-cors', require: 'rack/cors'
+gem 'rack-cors', :require  => 'rack/cors'
 
 
 

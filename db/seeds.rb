@@ -29,3 +29,5 @@ message_one = Message.create!( author: "Hannah", content: "OH EM GEE!! COUNT ME 
 message_two = Message.create!( author: "Karen", content: "I LOVE, LOVE HER, do you want to meet up before the concert starts?", activity: activity_two)
 
 message_three = Message.create!( author: "Will", content: "would love to join in Chef Geoff's last dinner with you guys", activity: activity_three)
+
+activity_one.people.create(name: "Will")
