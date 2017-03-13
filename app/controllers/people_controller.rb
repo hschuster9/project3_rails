@@ -18,6 +18,7 @@ class PeopleController < ApplicationController
 
     if @person.save!
       render json: @person, status: :created, location: @person
+      render json: {message: "success"}, status: :ok
     else
       render json: @person.errors, status: :unprocessable_entity
     end
