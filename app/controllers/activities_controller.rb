@@ -50,7 +50,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
 
     if @activity.update!(activity_params)
-      render json: @activity, location: @activity
+      render json: @activity
     else
       render json: @activity.errors, status: :unprocessable_entity
     end
