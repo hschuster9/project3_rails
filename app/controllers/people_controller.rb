@@ -6,9 +6,9 @@ class PeopleController < ApplicationController
       render json: @people
     end
 
-    def show
-      @person = Person.find(params[:id])
-      render json: @person
+  def show
+    @person = Person.find(params[:id])
+    render json: @person
     end
 
   def create
@@ -16,7 +16,7 @@ class PeopleController < ApplicationController
     @person = @activity.people.build(person_params)
 
     if @person.save!
-      render json: @person, status: :created, location: @person
+      render json: @person, status: :created
     else
       render json: @person.errors, status: :unprocessable_entity
     end
