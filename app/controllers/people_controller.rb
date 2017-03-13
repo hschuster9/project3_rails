@@ -42,5 +42,4 @@ private
   def person_params
     params.require(:person).permit(:name)
   end
-
 end

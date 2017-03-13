@@ -21,6 +21,7 @@ module Project3Rails
      allow do
        origins '*' #this allows any origin. for testing purposes this is fine, but for deployment, you'll want to permit your `gh-pages`-deployed front end to interact with your API
        resource '*', :headers => :any, :methods => [:get, :post, :options, :put, :delete]
+
      end
    end
 
