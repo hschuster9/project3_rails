@@ -17,7 +17,7 @@ module Project3Rails
     config.middleware.insert_before 0, Rack::Cors do
      allow do
        origins '*' #this allows any origin. for testing purposes this is fine, but for deployment, you'll want to permit your `gh-pages`-deployed front end to interact with your API
-       resource '*', :headers => :any, :methods => [:get, :post, :options]
+       resource '*', :headers => :any, :methods => [:get, :post, :options, :delete, :put]
      end
    end
 

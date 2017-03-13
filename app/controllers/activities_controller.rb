@@ -26,20 +26,20 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
 
-    # if @activity.save!
-    #   render json: @activity, status: :created, location: @activity
-    # else
-    #   render json: @activity.errors, status: :unprocessable_entity
-    # end
-    respond_to do |format|
-      if @activity.save!
-        format.html { redirect_to @activity, notice: "Activity was created"}
-        format.json { render json: @activity, status: :created, location: @activity }
-      else
-        format.html { render :new }
-        format.json { render json: @activity.errors, status: :unprocessable_entity }
-      end
+    if @activity.save!
+      render json: @activity, status: :created, location: @activity
+    else
+      render json: @activity.errors, status: :unprocessable_entity
     end
+    # respond_to do |format|
+    #   if @activity.save!
+    #     format.html { redirect_to @activity, notice: "Activity was created"}
+    #     format.json { render json: @activity, status: :created, location: @activity }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @activity.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def edit
@@ -70,7 +70,6 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @activity.destroy
 
-    redirect_to activities_path
   end
 
 private
