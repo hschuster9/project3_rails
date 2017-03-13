@@ -1,15 +1,16 @@
 class PeopleController < ApplicationController
 
   def index
-      @activity = Activity.find(params[:activity_id])
-      @people = @activity.people
-      render json: @people
-    end
+    @activity = Activity.find(params[:activity_id])
+    @people = @activity.people
+    render json: @people
+  end
 
   def show
     @person = Person.find(params[:id])
     render json: @person
-    end
+  end
+
 
   def create
     @activity = Activity.find(params[:activity_id])
