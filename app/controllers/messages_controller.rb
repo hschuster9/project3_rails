@@ -69,7 +69,7 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     @message.destroy
 
-    redirect_to message_path
+    # redirect_to message_path
   end
 
 private
