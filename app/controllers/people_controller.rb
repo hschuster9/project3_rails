@@ -21,11 +21,6 @@ class PeopleController < ApplicationController
     else
       render json: @person.errors, status: :unprocessable_entity
     end
-
-  end
-
-  def edit
-    @person = Person.find(params[:id])
   end
 
   def update
@@ -40,8 +35,6 @@ class PeopleController < ApplicationController
   def destroy
     @person = Person.find(params[:id])
     @person.destroy
-
-    # redirect_to people_path
     render json: {message: "success"}, status: :ok
   end
 
