@@ -6,6 +6,12 @@ class PeopleController < ApplicationController
     render json: @people
   end
 
+  def show
+    @person = Person.find(params[:id])
+    render json: @person
+  end
+
+
   def create
     @activity = Activity.find(params[:activity_id])
     @person = @activity.people.build(person_params)
@@ -20,7 +26,7 @@ class PeopleController < ApplicationController
   def update
     @person = Person.find(params[:id])
     if @person.update!(person_params)
-      render json: @person, location: @person
+      render json: @person
     else
       render json: @person.errors, status: :unprocessable_entity
     end
@@ -29,6 +35,7 @@ class PeopleController < ApplicationController
   def destroy
     @person = Person.find(params[:id])
     @person.destroy
+    render json: {message: "success"}, status: :ok
   end
 
 private
