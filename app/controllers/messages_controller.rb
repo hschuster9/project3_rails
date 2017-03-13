@@ -11,10 +11,6 @@ class MessagesController < ApplicationController
     render json: @message
   end
 
-  # def new
-  #   @message = Message.new
-  # end
-
   def create
     @activity = Activity.find(params[:activity_id])
     @message = @activity.messages.build(message_params)
@@ -25,10 +21,6 @@ class MessagesController < ApplicationController
       render json: @message.errors, status: :unprocessable_entity
     end
   end
-
-  # def edit
-  #   @message = Message.find(params[:id])
-  # end
 
   def update
     @message = Message.find(params[:id])
