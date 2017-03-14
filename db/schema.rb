@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 20170310202000) do
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.string  "name"
+    t.string  "category"
+    t.string  "event_name"
     t.string  "location"
     t.date    "date"
     t.string  "blurb"
