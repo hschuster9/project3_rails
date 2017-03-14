@@ -25,12 +25,11 @@ class ActivitiesController < ApplicationController
     else
       render json: @activity.errors, status: :unprocessable_entity
     end
-
   end
 
   def edit
     @activity = Activity.find(params[:id])
-
+  
   end
 
   def update
@@ -41,7 +40,7 @@ class ActivitiesController < ApplicationController
     else
       render json: @activity.errors, status: :unprocessable_entity
     end
-
+    
   end
 
   def destroy

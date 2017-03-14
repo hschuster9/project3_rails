@@ -14,6 +14,7 @@ class MessagesController < ApplicationController
   def create
     @activity = Activity.find(params[:activity_id])
     @message = @activity.messages.build(message_params)
+
     if @message.save!
       render json: @message, status: :created
     else
@@ -23,6 +24,7 @@ class MessagesController < ApplicationController
 
   def update
     @message = Message.find(params[:id])
+    
     if @message.update!(message_params)
       render json: @message
     else
