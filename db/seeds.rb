@@ -12,11 +12,11 @@ Person.destroy_all
 Activity.destroy_all
 Message.destroy_all
 
-activity_one = Activity.create!( name: "Movies", location: "AMC 24", date: "03/20/2017", blurb: "I really want to see Logan but I don't want to go alone to such an awesome movie!", time: "07:00 PM", price: "$14.00" )
+activity_one = Activity.create!( category: "Movies", event_name: "Logan", location: "AMC 24", date: "03/20/2017", blurb: "I really want to see Logan but I don't want to go alone to such an awesome movie!", time: "07:00 PM", price: "$14.00" )
 
-activity_two = Activity.create!( name: "Concerts", location: "Jiffy Lube Live!", date: "05/03/2017", blurb: "Need someone to jam with at the Nicki Minaj concert, where my Black Barbies at!", time: "08:00 PM", price: "$200")
+activity_two = Activity.create!( category: "Concerts", event_name: "Nicki Minaj!", location: "Jiffy Lube Live!", date: "05/03/2017", blurb: "Need someone to jam with at the Nicki Minaj concert, where my Black Barbies at!", time: "08:00 PM", price: "$200")
 
-activity_three = Activity.create!( name: "Dinner", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
+activity_three = Activity.create!( category: "Dinner", event_name: "Fine dining", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
 
 person_one = Person.create!( name: "Peter", activity: activity_one)
 
