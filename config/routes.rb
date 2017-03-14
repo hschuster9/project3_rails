@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   resources :activities do
     resources :people
-    resources :messages
-end
+      resources :messages
+  end
 end

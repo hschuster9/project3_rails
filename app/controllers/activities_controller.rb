@@ -14,6 +14,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+
   end
 
   def create
@@ -28,6 +29,7 @@ class ActivitiesController < ApplicationController
 
   def edit
     @activity = Activity.find(params[:id])
+  
   end
 
   def update
@@ -38,11 +40,13 @@ class ActivitiesController < ApplicationController
     else
       render json: @activity.errors, status: :unprocessable_entity
     end
+    
   end
 
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
+    
   end
 
 private
