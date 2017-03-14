@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
 
   def update
     @message = Message.find(params[:id])
-    
+
     if @message.update!(message_params)
       render json: @message
     else
