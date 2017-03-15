@@ -25,7 +25,6 @@ class ActivitiesController < ApplicationController
     else
       render json: @activity.errors, status: :unprocessable_entity
     end
-
   end
 
   def edit

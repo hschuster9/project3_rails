@@ -26,6 +26,26 @@ activity_eleven = Activity.create!( category: "Dinner", event_name: "Red Lobster
 activity_twelve = Activity.create!( category: "Dinner", event_name: "Chicken Out", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
 activity_thirteen = Activity.create!( category: "Dinner", event_name: "FOOOOOOOD", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
 
+activity_four = Activity.create!( category: "Movies", event_name: "Moonlight", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
+
+activity_five = Activity.create!( category: "Movies", event_name: "La La Land", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
+
+activity_six = Activity.create!( category: "Concerts", event_name: "Taylor Swift", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
+
+activity_seven = Activity.create!( category: "Concerts", event_name: "Lady Gaga", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
+
+activity_eight = Activity.create!( category: "Dinner", event_name: "McDonalds", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
+
+activity_nine = Activity.create!( category: "Dinner", event_name: "Taco Bell", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
+
+activity_ten = Activity.create!( category: "Dinner", event_name: "Wendy's", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
+
+activity_eleven = Activity.create!( category: "Dinner", event_name: "Red Lobster", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
+
+activity_twelve = Activity.create!( category: "Dinner", event_name: "Chicken Out", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
+
+activity_thirteen = Activity.create!( category: "Dinner", event_name: "FOOOOOOOD", location: "Chef Geoff", date: "04/07/2017", blurb: "Need someone to join me at his last night in DC!", time: "06:30 PM", price: "$150")
+
 person_one = Person.create!( name: "Peter", activity: activity_one)
 person_two = Person.create!( name: "Latoya", activity: activity_two)
 person_three = Person.create!( name: "Joshua", activity: activity_three)
