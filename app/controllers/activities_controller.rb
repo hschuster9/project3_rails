@@ -47,12 +47,12 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
-    
+
   end
 
 private
   def activity_params
-    params.require(:activity).permit(:name, :location, :date, :blurb, :time, :price)
+    params.require(:activity).permit(:category, :event_name, :location, :date, :blurb, :time, :price)
   end
 
 end
