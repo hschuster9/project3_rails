@@ -29,7 +29,7 @@ class ActivitiesController < ApplicationController
 
   def edit
     @activity = Activity.find(params[:id])
-  
+
   end
 
   def update
@@ -40,18 +40,18 @@ class ActivitiesController < ApplicationController
     else
       render json: @activity.errors, status: :unprocessable_entity
     end
-    
+
   end
 
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
-    
+
   end
 
 private
   def activity_params
-    params.require(:activity).permit(:name, :location, :date, :blurb, :time, :price)
+    params.require(:activity).permit(:category, :event_name, :location, :date, :blurb, :time, :price)
   end
 
 end
