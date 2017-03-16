@@ -13,6 +13,9 @@ module Project3Rails
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    config.time_zone = 'Eastern Time (US & Canada)'
+    config.active_record.time_zone_aware_types = [:time]
     config.api_only = true
 
     config.active_record.raise_in_transactional_callbacks = true
@@ -22,8 +25,8 @@ module Project3Rails
        origins '*' #this allows any origin. for testing purposes this is fine, but for deployment, you'll want to permit your `gh-pages`-deployed front end to interact with your API
        resource '*', :headers => :any, :methods => [:get, :post, :options, :put, :delete]
 
+
      end
    end
-
   end
 end
