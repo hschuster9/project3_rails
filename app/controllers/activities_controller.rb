@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = Activity.new(activity_params)
+    @activity = Activity.create(activity_params)
 
     if @activity.save!
       render json: @activity, status: :created, location: @activity
